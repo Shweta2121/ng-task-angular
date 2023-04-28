@@ -1,0 +1,11 @@
+:host ::ng-deep ng2-smart-table {
+    table tr th:first-child {
+        display: none;
+    }
+
+    table tr td:first-child {
+        display: none;
+    }
+}
+
+

@@ -1,0 +1,19 @@
+
+<div class="uk-container uk-container-expand uk-padding">
+    <div class="uk-grid-collapse uk-child-width-expand@s page-heading" uk-grid>
+        <div>
+            <h4 class="ng-label">All Customers</h4>
+        </div>
+        <div>
+            <div class="uk-text-right">
+                <button (click)="newCustomer()" class="uk-border-rounded uk-button uk-button-small uk-button-primary">
+                    <span class="uk-margin-xsmall-right uk-icon" uk-icon="icon: plus; ratio: 0.8"></span>
+                    Create Customer
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card uk-card-default table-card uk-padding-small uk-margin-medium-top uk-border-rounded">
+        <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    </div>
+</div>   

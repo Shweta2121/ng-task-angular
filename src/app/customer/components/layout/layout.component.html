@@ -1,0 +1,28 @@
+<section appTheme class="master-page">
+	<header>
+		<nav class="uk-card-default">
+			<div class="uk-container">
+				<div uk-navbar>
+					<div class="uk-navbar-left">
+		
+						<ul class="uk-navbar-nav">
+							<li class="uk-active"><a routerLink="dashboard">Logo</a></li>
+						</ul>
+					</div>
+					<div class="uk-navbar-right">
+						<ul class="uk-navbar-nav">
+							<li class="uk-active"><a routerLink="dashboard" routerLinkActive="active">Home</a></li>
+							<li class="uk-active"><a routerLink="all-customer" routerLinkActive="active">Customer</a></li>
+							<li><a (click)="logOut()">Logout</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="master-page-container">
+	  <router-outlet></router-outlet>
+	</div>
+  </section>
+  

@@ -1,0 +1,13 @@
+<!--Buttons -->
+<div container="overflow-auto" *ngIf="rowData.table === 'customer'" [insideClick]="true"
+    dropdown placement="top">
+    <button class="btn" id="button-alignment" dropdownToggle aria-controls="dropdown-alignment">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+    </button>
+    <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+        aria-labelledby="button-alignment">
+        <li role="menuitem">
+            <button (click)="redirectToCustomerDetails(rowData)" class="dropdown-item" >View</button>
+        </li>
+    </ul>
+</div>

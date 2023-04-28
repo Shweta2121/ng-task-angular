@@ -1,0 +1,51 @@
+
+<div class="uk-container uk-container-expand uk-padding">
+    <div class="uk-grid-collapse uk-child-width-expand@s page-heading" uk-grid>
+        <div class="uk-padding-small">
+            <h4 class="m-b-0">{{isEditForm ? 'Customer Deatils' : 'Create Customer'}}</h4>
+        </div>
+    </div>
+    <div class="uk-card uk-card-default uk-border-rounded table-card uk-padding">
+        <form [formGroup]="customerForm" (ngSubmit)="submitHandler()" class="uk-form-horizontal">
+            <div>
+                <div class="uk-grid-small uk-child-width-1-3@m uk-child-width-1-1@sm" uk-grid>
+                    <div class="form-input-required">
+                        <label class="uk-form-label" for="Full_Name">Full name</label>
+                        <input formControlName="Full_Name" id="Full_Name" 
+                            class="uk-input uk-form-width-large uk-form-small" type="text" [attr.disabled]="readonly? '' : null"
+                            placeholder="full name">
+                    </div>
+                    <div class="">
+                        <label class="uk-form-label" for="Email">Email</label>
+                        <input formControlName="Email" id="Email"  [attr.disabled]="readonly? '' : null"
+                            class="uk-input uk-form-width-large uk-form-small" type="text"
+                            placeholder="email">
+                    </div>
+                    <div class="">
+                        <label class="uk-form-label" for="Phone">Phone</label>
+                        <input formControlName="Phone" id="Phone"  [attr.disabled]="readonly? '' : null"
+                            class="uk-input uk-form-width-large uk-form-small" type="text"
+                            placeholder="Address 3" >
+                    </div>
+                    <div class="">
+                        <label class="uk-form-label" for="Address">Address</label>
+                        <input formControlName="Address" id="Address"  [attr.disabled]="readonly? '' : null"
+                            class="uk-input uk-form-width-large uk-form-small" type="text"
+                            placeholder="Address 4" >
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!readonly" class="uk-text-center uk-margin">
+                <button class="uk-button uk-button-medium uk-button-primary" type="submit">
+                    {{isEditForm ? 'Update' : 'Save'}}
+                </button>
+            </div>
+        </form>
+        <div *ngIf="isEditForm && readonly" class="uk-margin uk-flex-right@m uk-flex  uk-padding-small">
+            <button (click)="edit()" type="text" class="uk-border-rounded uk-button uk-margin-right uk-button-primary"
+           >Edit</button>
+           <button (click)="delete()" type="text" class="uk-border-rounded uk-button  uk-button-default"
+           >Delete</button>
+        </div>
+    </div>
+</div>   
